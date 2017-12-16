@@ -1,0 +1,17 @@
+application: vinodnalamati-freelancer
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: no
+
+handlers:
+- url: /(.*\.(gif|png|jpg|ico|js|css|php))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|css|php))
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt 
+
+- url: .*
+  script: main.py
